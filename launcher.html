@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz Launcher</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; background:#0b1220; color:#e8ecf1; text-align:center; padding:50px; }
+    button { padding:16px 24px; border:none; border-radius:12px; background:#3b82f6; color:white; font-size:18px; font-weight:600; cursor:pointer; }
+    button:hover { background:#2563eb; }
+  </style>
+</head>
+<body>
+  <h1>Start Your Quiz</h1>
+  <p>Click the button below to launch the quiz in a secure window.</p>
+  <button onclick="openQuiz()">Launch Quiz</button>
+
+  <script>
+    function openQuiz() {
+      const w = window.open(
+        "quiz.html", // <-- your quiz page filename
+        "quizWindow",
+        "width=1200,height=800,menubar=no,toolbar=no,location=no,status=no,resizable=yes,scrollbars=yes"
+      );
+      if (!w) {
+        alert("⚠️ Please allow popups for this site to start the quiz.");
+      }
+    }
+  </script>
+</body>
+</html>
+
